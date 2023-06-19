@@ -1,4 +1,4 @@
-let name = "hat";
+let name;
 function change(imgName) {
   /*var image = document.getElementById('image1');
  if(image_tracker==document.getElementById('image1')){
