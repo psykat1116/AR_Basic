@@ -1,27 +1,63 @@
-let name;
-function change(imgName) {
-  /*var image = document.getElementById('image1');
- if(image_tracker==document.getElementById('image1')){
- image.src="images/hat.png";
- image_tracker=document.getElementById('image1');
- }
- else{
- image.src="images/mirror-sunglasses.png";
- image_tracker=document.getElementById('image2');
- }*/
-
-  var img = document.getElementById("image1");
-  img.src = imgName;
-  if (img.src.match("sunglasses.png")) {
-    document.img.src = "sunglasses.png";
-    name = "sunglasses";
-  } else {
-    document.img.src = "hat.png";
-    name = "hat";
-  }
-
-  /*if(img.src.match()) img.src = "images/mirror-sunglasses.png";
-   else img.src = "images/hat.png";
-
-  document.image.src = img.src;*/
+function init() {
+  image = document.getElementById("image");
+  iMage = document.querySelector("#image img");
+  image.style.position = "relative";
+  image.style.left = "0px";
+  image.style.top = "0px";
+  iMage.style.height = "10em";
+  iMage.style.width = "12em";
 }
+
+function getKeyAndMove(e) {
+  var key_code = e.which || e.keyCode;
+  switch (key_code) {
+    case 37: //left arrow key
+      moveLeft();
+      break;
+    case 38: //Up arrow key
+      moveUp();
+      break;
+    case 39: //right arrow key
+      moveRight();
+      break;
+    case 40: //down arrow key
+      moveDown();
+      break;
+  }
+}
+function moveLeft() {
+  image.style.left = parseInt(image.style.left) - 5 + "px";
+}
+function moveUp() {
+  image.style.top = parseInt(image.style.top) - 5 + "px";
+}
+function moveRight() {
+  image.style.left = parseInt(image.style.left) + 5 + "px";
+}
+function moveDown() {
+  image.style.top = parseInt(image.style.top) + 5 + "px";
+}
+
+let video = document.querySelector("#videoElement");
+
+// function swapImage(id, primary, secondary) {
+//   src = document.getElementById(id).src;
+//   if (src.match(primary)) {
+//     document.getElementById(id).src = secondary;
+//   } else {
+//     document.getElementById(id).src = primary;
+//   }
+// }
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices
+    .getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch((error) => {
+      console.log("Something went wrong!");
+    });
+}
+
+window.onload = init;
