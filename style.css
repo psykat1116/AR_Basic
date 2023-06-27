@@ -66,10 +66,9 @@ body {
 }
 
 .arrow span {
-  position: absolute;
+  position:absolute;
   height: 25px;
   width: 25px;
-  /* background-color: blue; */
   border-top: 2px solid #fff;
   border-left: 2px solid #fff;
 }
