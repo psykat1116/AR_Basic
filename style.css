@@ -93,6 +93,18 @@ body {
   margin-bottom: 15px;
 }
 
+.grow span {
+  transform: rotate(90deg);
+  margin-top:-15px;
+  margin-left:15px;
+}
+
+.shrink span {
+  transform: rotate(-90deg);
+  margin-top: 15px;
+  margin-left: -15px;
+}
+
 #image {
   position: fixed; /* Sit on top of the page content */
   display: block; /* Hidden by default */

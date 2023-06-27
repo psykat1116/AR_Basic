@@ -1,30 +1,14 @@
+image = document.getElementById("image");
+iMage = document.querySelector("#image img");
+
 function init() {
-  image = document.getElementById("image");
-  iMage = document.querySelector("#image img");
   image.style.position = "relative";
   image.style.left = "0px";
   image.style.top = "0px";
-  iMage.style.height = "10em";
-  iMage.style.width = "12em";
+  iMage.style.height = "12em";
+  iMage.style.width = "14em";
 }
 
-function getKeyAndMove(e) {
-  var key_code = e.which || e.keyCode;
-  switch (key_code) {
-    case 37: //left arrow key
-      moveLeft();
-      break;
-    case 38: //Up arrow key
-      moveUp();
-      break;
-    case 39: //right arrow key
-      moveRight();
-      break;
-    case 40: //down arrow key
-      moveDown();
-      break;
-  }
-}
 function moveLeft() {
   image.style.left = parseInt(image.style.left) - 5 + "px";
 }
@@ -36,6 +20,14 @@ function moveRight() {
 }
 function moveDown() {
   image.style.top = parseInt(image.style.top) + 5 + "px";
+}
+function sizeUp() {
+  iMage.style.height = parseInt(iMage.style.height) + 2 + "em";
+  iMage.style.width = parseInt(iMage.style.width) + 2 + "em";
+}
+function sizeDown() {
+  iMage.style.height = parseInt(iMage.style.height) - 2 + "em";
+  iMage.style.width = parseInt(iMage.style.width) - 2 + "em";
 }
 
 let video = document.querySelector("#videoElement");
