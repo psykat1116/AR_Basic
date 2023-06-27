@@ -49,11 +49,11 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
   margin-top: 2em;
 }
 
-.arrows .arrow{
+.arrows .arrow {
   height: 50px;
   width: 50px;
   display: flex;
@@ -63,6 +63,35 @@ body {
   padding: 30px;
   border: 2px solid #fff;
   cursor: pointer;
+}
+
+.arrow span {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  /* background-color: blue; */
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+}
+
+.left span {
+  transform: rotate(-45deg);
+  margin-left: 10px;
+}
+
+.right span {
+  transform: rotate(135deg);
+  margin-right: 10px;
+}
+
+.up span {
+  transform: rotate(45deg);
+  margin-top: 15px;
+}
+
+.down span {
+  transform: rotate(-135deg);
+  margin-bottom: 15px;
 }
 
 #image {
